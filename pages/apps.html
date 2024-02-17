@@ -33,32 +33,52 @@
          z-index: -1;
       }
 
-      header {
-         background-color: #333;
-         padding: 10px;
-         display: flex;
-         justify-content: space-between;
-         position: fixed;
-         width: 100%;
-      }
-
       #icbuttons {
          display: flex;
          align-items: center;
       }
 
-      #clock {
-         font-weight: 900;
-         margin-top: 12px;
+      #logo {
+         width: 85px; /* Increased size to match application icons */
+         height: 85px; /* Increased size to match application icons */
+         border-radius: 5px;
+         margin-right: 10px;
       }
+
+#clock {
+   font-weight: 800;
+   margin-top: 22px;
+   font-size: 24px; /* Increased font size */
+   color: #ffffff; /* Custom text color */
+   text-align: center; /* Center-align text */
+   padding: 10px; /* Add padding for better spacing */
+}
 
       .content {
          margin-top: 60px; /* Adjusted margin for better spacing */
          padding: 20px;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
       }
 
       .grid-container {
          /* Add styles for your grid container */
+      }
+
+      .search-container {
+         width: 100%;
+         display: flex;
+         justify-content: center;
+         margin-bottom: 20px;
+      }
+
+      #searchBar {
+         width: 80%;
+         padding: 10px;
+         border: none;
+         border-radius: 5px;
+         margin-right: 10px;
       }
 
       .apps-grid {
@@ -68,28 +88,11 @@
          justify-content: center;
       }
 
-      footer {
-         display: flex;
-         justify-content: center;
-         margin-top: 20px;
-         position: fixed;
-         width: 100%;
-         bottom: 0;
-      }
-
       #footer a {
          font-size: 4vh;
          white-space: nowrap;
          margin: 0;
          margin-right: 20px;
-      }
-
-      #logo {
-         width: 30px;
-         height: 30px;
-         border-radius: 5px;
-         margin-top: 10px;
-         margin-left: 10px;
       }
 
       .apps-grid img {
@@ -126,25 +129,23 @@
    <div class="page" id="imgsearch">
       <header>
          <div id="icbuttons">
-            <a href="/index" id="home" class="zoom">
-               <img src="/images/favicon/favicon.ico" alt="Logo" id="logo">
-            </a>
+            <img src="/images/favicon/favicon.ico" alt="Logo" id="logo">
             <div id="clock">
                <p id="time"></p>
             </div>
-            <div>
-               <div id="desktopnav">
-                  <a href="/apps" class="zoom navitem" id="apps"><i class="fas fa-laptop"></i></a>
-                  <a href="/games" class="zoom navitem" id="games"><i class="fas fa-gamepad"></i></a>
-                  <a href="/extras" class="zoom navitem" id="extras"><i class="fas fa-plus"></i></a>
-                  <a href="/settings" class="zoom navitem" id="settings"><i class="fas fa-cog"></i></a>
-               </div>
-            </div>
+         </div>
+         <div id="desktopnav">
+            <a href="/apps" class="zoom navitem" id="apps"><i class="fas fa-th"></i></a>
+            <a href="/games" class="zoom navitem" id="games"><i class="fas fa-gamepad"></i></a>
+            <a href="/extras" class="zoom navitem" id="extras"><i class="fas fa-plus-circle"></i></a>
+            <a href="/settings" class="zoom navitem" id="settings"><i class="fas fa-cogs"></i></a>
          </div>
       </header>
       <div class="content">
          <div class="grid-container">
-            <input type="text" id="searchBar" placeholder="Search apps..." onkeyup="searchApps()">
+            <div class="search-container">
+               <input type="text" id="searchBar" placeholder="Search apps..." onkeyup="searchApps()">
+            </div>
 
             <h2></h2>
             <div class="apps-grid" id="pinnedAppsGrid">
